@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    image: maxormeno/vitrina-be:latest
+    ports:
+      - "9000:9000"
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/vitrina
+    depends_on:
+      - mongo
+
+  frontend:
+    image: maxormeno/vitrina-fe:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_APP_EXPRESS_URL=http://backend:9000
+    depends_on:
+      - backend
+
+  mongo:
+    image: mongo:7.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
