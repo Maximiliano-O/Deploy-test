@@ -94,7 +94,7 @@
     # true  ➝ Nginx agregará "/" al final del proxy_pass (ej: proxy_pass http://localhost:3000/).
     # false ➝ Nginx no agregará "/" al final (ej: proxy_pass http://localhost:3000).
     # Recomendación: Si los servicios no se comunican bien entre sí, o los assets no cargan, prueba cambiar este valor.
-    use_trailing_slash: true
+    use_trailing_slash: false
     
     # Para SSL (enable_ssl: true -> si hay dominio, enable_ssl: false -> sin dominio / local)
     enable_ssl: true
