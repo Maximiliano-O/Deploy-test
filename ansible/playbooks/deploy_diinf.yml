@@ -45,7 +45,7 @@
         image: "maxormeno/vitrina-be"
         tag: "latest"
         port: 9000
-        api_prefix: "vitrina-be"
+        api_prefix: "api"
       
       - name: "vitrina-fe"
         type: "frontend"
